@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.Canvas?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.multidimensionaldiscreteoptimization.MainController">
+    <top>
+        <HBox spacing="10" alignment="CENTER" >
+            <Label text="Количество городов:"/>
+            <ComboBox fx:id="cityCountComboBox"/>
+            <Button text="ПОСТРОИТЬ КАРТУ" onAction="#generateMap"/>
+            <Button text="ВЫЧИСЛИТЬ" onAction="#calculateRoute"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="10" >
+            <TableView fx:id="distanceTable">
+                <columns>
+                    <TableColumn fx:id="city1Column" text="Город 1"/>
+                    <TableColumn fx:id="city2Column" text="Город 2"/>
+                    <TableColumn fx:id="distanceColumn" text="Расстояние"/>
+                </columns>
+            </TableView>
+            <Label text="Результат:"/>
+            <TextArea fx:id="resultTextArea" editable="false"/>
+        </VBox>
+    </center>
+    <right>
+        <Canvas fx:id="mapCanvas" width="400" height="400"/>
+    </right>
+</BorderPane>
